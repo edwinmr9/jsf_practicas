@@ -1,29 +1,33 @@
 package managed;
 
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
 
+@Named 
+@RequestScoped
 public class LoginBean {
 	private String usuario;
 	private String password;
 	public String getUsuario() {
 		return usuario;
 	}
-	
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
 	public String getPassword() {
 		return password;
-	} 
+	}
 	public void setPassword(String password) {
 		this.password = password;
-	} 
+	}
 	
-	public String login() { 
-		if(usuario.equals("curso") && password.equals("curso")) {
+	
+	
+	public String login() {
+		if(usuario.equals("curso")&&password.equals("curso")) {
 			return "bienvenida";
 		}else {
-			return "error"; 
+			return "error";
 		}
-		
 	}
 }
